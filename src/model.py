@@ -9,7 +9,7 @@ class SimpleClassifier(pl.LightningModule):
         super().__init__()
         self.save_hyperparameters()
         self.lr = learning_rate
-
+        self.accuracy = Accuracy(task="multiclass", num_classes=out_features)
 
         # 定义简单的三层网络
         self.net = nn.Sequential(

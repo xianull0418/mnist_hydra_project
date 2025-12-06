@@ -1,0 +1,6 @@
+_target_: lightning.pytorch.Trainer
+max_epochs: 5
+accelerator: "auto" # 自动检测 GPU/CPU
+devices: 1
+enable_checkpointing: true
+# 这里为了简单没加 callbacks，你可以把之前教你的 ModelCheckpoint 加在这
