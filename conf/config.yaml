@@ -1,0 +1,14 @@
+defaults:
+  - _self_
+  - data: mnist
+  - model: mlp
+  - train: default
+
+# 设置实验名称，用于生成文件夹
+experiment_name: "mnist_demo"
+
+# Hydra 运行配置
+hydra:
+  run:
+    # 输出路径：outputs/实验名/日期/时间
+    dir: outputs/${experiment_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}

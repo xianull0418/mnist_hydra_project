@@ -1,0 +1,5 @@
+_target_: src.data.MNISTDataModule
+# ${hydra:runtime.cwd} 表示项目根目录，这样数据不会下到 outputs 文件夹里
+data_dir: "${hydra:runtime.cwd}/data/" 
+batch_size: 64
+num_workers: 4
