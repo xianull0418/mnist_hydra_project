@@ -1,2 +1,2 @@
 # mnist_hydra_project
-这是一个练习`omegaconf`和`lightning`的项目
+这是一个练习`omegaconf` 、 `lightning` 、 `wandb`的项目
