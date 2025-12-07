@@ -1,0 +1,113 @@
+_wandb:
+    value:
+        cli_version: 0.23.1
+        e:
+            dvd0cpprpcvrr406rwvsah0tyxfnadu5:
+                apple:
+                    ecpuCores: 6
+                    gpuCores: 10
+                    memoryGb: 24
+                    name: Apple M4
+                    pcpuCores: 4
+                    ramTotalBytes: "25769803776"
+                    swapTotalBytes: "7516192768"
+                args:
+                    - -m
+                    - model.learning_rate=0.01,0.001
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 10
+                cpu_count_logical: 10
+                disk:
+                    /:
+                        total: "494384795648"
+                        used: "312661217280"
+                email: xianull0418@gmail.com
+                executable: /Users/xianull/.miniconda/bin/python
+                git:
+                    commit: fd12d37c62004497244eac9a30160e6a7385b8e1
+                    remote: git@github.com:xianull0418/mnist_hydra_project.git
+                host: xianulldeMacBook-Air.local
+                memory:
+                    total: "25769803776"
+                os: macOS-26.1-arm64-arm-64bit
+                program: /Users/xianull/Desktop/mnist_hydra_project/train.py
+                python: CPython 3.12.9
+                root: /Users/xianull/Desktop/mnist_hydra_project/logs/
+                startedAt: "2025-12-07T03:44:09.724996Z"
+                writerId: dvd0cpprpcvrr406rwvsah0tyxfnadu5
+        m:
+            - "1": trainer/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.12.9
+        t:
+            "1":
+                - 1
+                - 41
+                - 50
+                - 106
+            "2":
+                - 1
+                - 41
+                - 50
+                - 106
+            "3":
+                - 2
+                - 7
+                - 13
+                - 15
+                - 66
+            "4": 3.12.9
+            "5": 0.23.1
+            "12": 0.23.1
+            "13": darwin-arm64
+data:
+    value:
+        _target_: src.data.MNISTDataModule
+        batch_size: 64
+        data_dir: /Users/xianull/Desktop/mnist_hydra_project/data/
+        num_workers: 4
+experiment_name:
+    value: mnist_demo
+hidden_dim:
+    value: 128
+in_features:
+    value: 784
+learning_rate:
+    value: 0.01
+logger:
+    value:
+        _target_: lightning.pytorch.loggers.WandbLogger
+        group: ""
+        id: null
+        job_type: train
+        log_model: false
+        name: mnist_demo_2025-12-07_11-44-08
+        offline: false
+        prefix: ""
+        project: mnist_hydra_demo
+        save_dir: /Users/xianull/Desktop/mnist_hydra_project/logs/
+        tags: []
+model:
+    value:
+        _target_: src.model.SimpleClassifier
+        hidden_dim: 128
+        in_features: 784
+        learning_rate: 0.01
+        out_features: 10
+out_features:
+    value: 10
+train:
+    value:
+        _target_: lightning.pytorch.Trainer
+        accelerator: auto
+        devices: 1
+        enable_checkpointing: true
+        max_epochs: 5

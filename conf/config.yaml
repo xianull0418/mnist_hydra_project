@@ -3,7 +3,7 @@ defaults:
   - data: mnist
   - model: mlp
   - train: default
-
+  - logger: wandb
 # 设置实验名称，用于生成文件夹
 experiment_name: "mnist_demo"
 

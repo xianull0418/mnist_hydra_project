@@ -1,0 +1,19 @@
+# conf/logger/wandb.yaml
+
+# 指向 Lightning 官方集成的 WandbLogger
+_target_: lightning.pytorch.loggers.WandbLogger
+
+# 核心配置
+project: "mnist_hydra_demo"      # 你的 WandB 项目名
+name: "${experiment_name}_${now:%Y-%m-%d_%H-%M-%S}" # 自动生成 Run Name
+save_dir: "${hydra:runtime.cwd}/logs/" # 本地日志存哪里
+offline: false                   # 设为 true 可以离线跑 (不上报)
+id: null                         # 恢复训练时用
+log_model: false                 # 是否把模型 checkpoint 上传到 wandb (模型大时建议关掉)
+
+# 这是一个很棒的功能：把 Hydra 的所有配置都记录到 WandB 的 Config 面板里
+# 这样你在网页上就能看到这次实验用了什么 batch_size, lr 等等
+prefix: ""
+job_type: "train"
+group: ""
+tags: []

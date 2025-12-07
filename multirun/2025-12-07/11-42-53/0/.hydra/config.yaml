@@ -1,0 +1,30 @@
+experiment_name: mnist_demo
+data:
+  _target_: src.data.MNISTDataModule
+  data_dir: ${hydra:runtime.cwd}/data/
+  batch_size: 64
+  num_workers: 4
+model:
+  _target_: src.model.SimpleClassifier
+  in_features: 784
+  hidden_dim: 128
+  out_features: 10
+  learning_rate: 0.01
+train:
+  _target_: lightning.pytorch.Trainer
+  max_epochs: 5
+  accelerator: auto
+  devices: 1
+  enable_checkpointing: true
+logger:
+  _target_: lightning.pytorch.loggers.WandbLogger
+  project: mnist_hydra_demo
+  name: ${experiment_name}_${now:%Y-%m-%d_%H-%M-%S}
+  save_dir: ${hydra:runtime.cwd}/logs/
+  offline: false
+  id: null
+  log_model: false
+  prefix: ''
+  job_type: train
+  group: ''
+  tags: []
